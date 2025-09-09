@@ -83,8 +83,8 @@ def Analysis(df, dsid='0', campaign='none', xsection = 0, sumWeights=1, output="
 
     branches_to_store_reco = [
     "pass_dilep_ee_NOSYS", "pass_dilep_emu_NOSYS", "pass_dilep_mumu_NOSYS","netweight", "met_phi_NOSYS",
-    "met_met_NOSYS",
-    ]
+    "met_met_NOSYS", "jet_GN2v01_FixedCutBEff_65_select", "jet_GN2v01_FixedCutBEff_70_select", "jet_GN2v01_FixedCutBEff_77_select", 
+    "jet_GN2v01_FixedCutBEff_85_select", "jet_GN2v01_pb", "jet_GN2v01_pc", "jet_GN2v01_ptau", "jet_GN2v01_pu"]
 
     for br in keep_branches:
 
@@ -105,8 +105,8 @@ def Analysis(df, dsid='0', campaign='none', xsection = 0, sumWeights=1, output="
 
 cross_section = {
     410472: 87.8676,
-    802381: 0.07
-}
+    521385: 0.675
+    }
 
 
 df_flist = pd.read_csv(inputDir+'filelist.txt', sep='\s+', header=None)

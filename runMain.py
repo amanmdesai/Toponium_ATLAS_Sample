@@ -4,9 +4,6 @@ from config import *
 import pandas as pd
 from collections import defaultdict
 
-# Example values — update as needed
-dsid_list = [410472, 521385]
-campaign_list = ["mc20a", "mc20d", "mc20e"]
 
 
 df_flist = pd.read_csv(inputDir+'filelist.txt', sep='\s+', header=None)
