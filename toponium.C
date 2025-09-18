@@ -30,14 +30,14 @@ using namespace std;
 using namespace RestFrames;
 ROOT::EnableImplicitMT(10);
 
-void run(std::string sample){
+void run(std::string path, std::string file, std::string sample){
 
-  //std::string sample = "ttbar";
-  //std::string sample = "toponium";
 
+  // work implemented for one ttbar and one toponium file - to do - add tchain for all toponium//ttbar files
   std::string output_name = sample+"_reco.root";
-  TFile *f1 = new TFile((sample+".root").c_str(),"read");
+  TFile *f1 = new TFile((path+file).c_str(),"read");
 
+  // change these to match the atlas file -- see readme files
   Int_t           numParticles;
   Float_t         eventweight;
   vector<int>     *pid = new vector<int>;
@@ -1710,8 +1710,8 @@ histNmttbar_3_3->Write();
 
 # ifndef __CINT__ // main function for stand-alone compilation
 int toponium(){
-  run("toponium");
-  run("ttbar");
+  run("/remote/nas00-0/shared/atlas/top/ttbar/atlas_toponium_rjr/","410472/mc20a_user.jnesbitt.44244453._000001.syst_scout.root","ttbar");
+  run("/remote/nas00-0/shared/atlas/top/ttbar/atlas_toponium_rjr/","521385/mc20a_user.jnesbitt.45480013._000001.nominal_modelling_toponium.root","toponium");
   return 0;
 }
 #endif
